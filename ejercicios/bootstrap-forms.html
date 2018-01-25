@@ -1,0 +1,210 @@
+<!--
+1. Coge el resultado del ejercicio 2 y maqueta el formulario de la barra superior. Para que tenga un aspecto de fomrulario inline boostrap pero que el icono de búsqueda vaya dentro del campo. Dentro del campo deberá aparecer cuando no esté rellenado el texto "Buscar".
+2. Dentro del div de contenido introduce el típico formulario de login. Maquétalo con Bootstrap.
+3. Crea una nueva página que sea copia de la anterior y llámala registro. Quita el contenido completo central de la página y pon el típico formulario de registro: nombre e usuario, contraseña dos veces, email, nombre apellidos, etc... y el botón de enviar el formulario. 
+4. Integra un plugin de Jquery de validación de formularios sobre estos dos últimos formularios. Mira a ver si puedes hacer que el plugin de validación use por defecto las clases de error y validación de bootstrap.
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   	<link rel=stylesheet href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+    <link rel=stylesheet href="../bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="migrid.css" title="style" />
+    <script src="../../jquery/jquery-3.2.1.js"></script>
+    <script src="../bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../../jquery/jquery-plugin/dist/jquery.validate.js"></script>
+    <script src="../../jquery/jquery-plugin/dist/additional-methods.js"></script>
+    <script src="../../jquery/jquery-plugin/dist/localization/messages_es.js"></script>
+    <script src="validaciones-bootstrap.js"></script>
+    
+    
+	<title>Lorem ipsum</title>
+</head>
+
+<body>
+<!-- 
+Intenta transformar el código que se muestra de ejemplo en este ejercicio, para mantenieniendo las proporciones de los cajas del original, pero usando bootstrap para posionar el contenido en: contenedor, rows y columnas.
+-->
+
+<div class="container principal">
+<!-- Contenedor -->
+   
+ 	<!-- Cabecera -->
+        <div class="row cabecera">
+            <div class="logo col-lg-8 col-md-8 col-sm-7 col-xs-7">
+                <h1><span>LOGOTIPO</span></h1>
+            </div>
+
+            <div class="buscador col-lg-4 col-md-4 col-sm-5 col-xs-5">
+              <form action="#" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="busqueda"  placeholder="Buscar"/>
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+	
+	<!-- /Cabecera -->
+   
+    <!--/Cuerpo -->
+    <div class="cuerpo_sin_pie row">
+    <!-- Menu principal -->
+        <div class="menu_principal col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <ul class="menu_lateral row">
+                <li class="col-lg-1 col-md-1 col-sm-1 col-xs-2"><a href="#">Lorem</a></li>
+                <li class="col-lg-1 col-md-1 col-sm-1 col-xs-2"><a href="#">Ipsum</a></li>
+                <li class="col-lg-1 col-md-1 col-sm-1 col-xs-2"><a href="#">Dolor</a></li>
+                <li class="col-lg-1 col-md-1 col-sm-1 col-xs-2"><a href="#">Sit</a></li>
+                <li class="col-lg-1 col-md-1 col-sm-1 col-xs-2"><a href="#">Amet</a></li>
+                <li class="espacio col-lg-7 col-md-7 col-sm-7 col-xs-2"></li>
+            </ul>
+        </div>
+
+
+    <div class="lateral col-lg-3 col-md-3 col-sm-3 col-xs-4">
+    <!-- Lateral -->  
+
+        <!-- Noticias -->
+        <div class="noticias">
+            <h3><a href="#">Noticias</a></h3>
+            <p><span class="fecha">dd/mm/aaaa</span> <a href="#">Lorem ipsum dolor sit amet</a></p>
+            <p><span class="fecha">dd/mm/aaaa</span> <a href="#">Consectetuer adipiscing elit</a></p>
+            <p><span class="fecha">dd/mm/aaaa</span> <a href="#">Donec molestie nunc eu sapien</a></p>
+            <p><span class="fecha">dd/mm/aaaa</span> <a href="#">Maecenas aliquam dolor eget metus</a></p>
+            <p><span class="fecha">dd/mm/aaaa</span> <a href="#">Fusce tristique lorem id metus</a></p>
+        </div>
+        <!-- /Noticias -->
+        <!-- Enlaces relacionados -->
+        <nav class="enlaces_relacionados">
+            <h3><a href="#">Enlaces relacionados</a></h3>
+            <ul>
+                <li><a href="#">Proin placerat</a></li>
+                <li><a href="#">Nulla in felis</a></li>
+                <li><a href="#">Nam luctus</a></li>
+            </ul>
+        </nav>
+        <!-- /Enlaces relacionados -->		
+
+        <!-- Publicidad -->
+        <div class="publicidad">
+            <h3><a href="#">Publicidad</a></h3>
+            <p>Etiam fermentum, nisl tincidunt blandit interdum, massa velit posuere dolor, sed euismod sem odio at mi.</p>
+            <p>Duis porta placerat arcu. Nullam felis pede, commodo vel, suscipit a, molestie vel, felis. Maecenas mattis est vel est.</p>
+            <p><a href="#">Seguir leyendo...</a></p>
+        </div>
+        <!-- /Publicidad -->
+    <!-- /Lateral -->
+    </div>
+           
+    
+    <!-- Principal -->
+    <div class="principal col-lg-6 col-md-6 col-sm-6 col-xs-8">
+
+        <div class="articulo">
+                <h2>Iniciar sesión</h2>
+
+                <!--<img src="imagenes/imagen.png" alt="Imagen genérica" /> -->
+
+            <form id="form">
+              <div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="user" value="" placeholder="Usuario">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" value="" placeholder="Contraseña">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-dark" name="submit" value="Enviar" id="enviar">
+             
+                </div>               
+            </form>
+             
+      </div>
+
+            <div class="registro form-group">
+                <h2>Registro</h2>
+                <form id="form2">
+                    <div><label for="name">Nombre y apellidos</label>
+                    <input type="text" name="name" class="form-control" id="name" value="" required>
+                    </div>
+                    <div>
+                    <label for="date">Fecha de nacimiento</label>
+                    <input type="date" name="date" class="form-control" id="date" value="">
+                    </div>
+                    <div>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" class="form-control" id="email" value="" required>
+                    </div>
+                    <div>
+                    <label for="pass">Contraseña</label>
+                    <input type="password" name="pass" class="form-control" id="pass" value="" required>
+                    </div>
+                    <div>
+                    <label for="pass2">Repite tu contraseña</label>
+                    <input type="password" name="pass2" class="form-control" id="pass2" value="" required>
+                    </div>
+                    <br>
+                    <label for="condiciones">Acepto las condiciones del servicio</label>
+                    <input type="checkbox" name="condiciones" value="" id="condiciones" required>
+                    <br>
+                    <input type="submit" class="btn btn-dark" name="submit" value="Enviar" id="submit">
+                </form>    
+            </div>
+
+    </div>
+    <!-- /Principal -->
+
+    <!-- Secundario -->
+    <div class="secundario col-lg-3 col-md-3 col-sm-3 col-xs-8 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-4">
+        <h2>Phasellus blandit</h2>
+        <p>Praesent sodales imperdiet augue. Mauris lorem felis, semper eu, tincidunt eu, sollicitudin eget, sem. Nulla facilisi. Morbi ut enim ut enim ultricies dapibus.</p>
+        <p><a href="#">Seguir leyendo...</a></p>
+
+        <h2>Nullam vel turpis</h2>
+        <p>Donec commodo, turpis vel venenatis sollicitudin, quam ante convallis justo, sed eleifend justo lectus quis sapien. Ut consequat libero eget est.</p>
+        <p><a href="#">Seguir leyendo...</a></p>
+    </div>
+    <!-- /Secundario -->
+        <div class="clear"></div>
+    <!-- /Contenido -->
+	
+  </div>
+   <!--/Cuerpo -->
+   
+    <!-- Pie -->
+	<div class="pie row">
+		<span class="enlaces col-lg-10 col-md-10 col-sm-8 col-xs-6">
+			<a href="#">Nulla</a> |
+			<a href="#">Pharetra</a> |
+			<a href="#">Luctus</a> |
+			<a href="#">Ipsum</a> |
+			<a href="#">Proin</a> |
+			<a href="#">Placerat</a>
+		</span>
+		
+		<span class="copyright col-lg-2 col-md-2 col-sm-4 col-xs-6">
+			&copy; Copyright Lorem ipsum
+		</span>
+		<div class="clear"></div>
+	</div>
+	<!-- /Pie -->
+
+</div>
+<!-- /Contenedor -->
+
+</body>
+</html>
+
